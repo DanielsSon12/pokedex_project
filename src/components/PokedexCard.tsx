@@ -5,7 +5,9 @@ import withDataFetch from "./DataFetch";
 const PokedexCard = ({ title, pokemon, data }: any) => {
   const [search, setSearch] = useState("1");
 
-  const handleSearch = () => {};
+  const handleSearch = () => {
+    data(search);
+  };
 
   const handlePrevious = () => {};
 
