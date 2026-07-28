@@ -9,7 +9,16 @@ const PokedexCard = ({ title, pokemon, data }: any) => {
     data(search);
   };
 
-  const handlePrevious = () => {};
+  const handlePrevious = () => {
+    if (pokemon.id <= 1) {
+      return;
+    }
+
+    const previousId = pokemon.id - 1;
+
+    setSearch(String(previousId));
+    data(String(previousId));
+  };
 
   const handleNext = () => {};
 
