@@ -2,11 +2,15 @@ import { useState } from "react";
 
 import withDataFetch from "./DataFetch";
 
-const PokedexCard = ({ title, pokemon, data }: any) => {
-  const [search, setSearch] = useState("1");
+const PokedexCard = ({ title, pokemon, fetchPokemon }: any) => {
+  const [search, setSearch] = useState("");
 
   const handleSearch = () => {
-    data(search);
+    if (!search) {
+      return;
+    }
+
+    fetchPokemon(search);
   };
 
   const handlePrevious = () => {
@@ -17,14 +21,14 @@ const PokedexCard = ({ title, pokemon, data }: any) => {
     const previousId = pokemon.id - 1;
 
     setSearch(String(previousId));
-    data(String(previousId));
+    fetchPokemon(String(previousId));
   };
 
   const handleNext = () => {
     const nextId = pokemon.id + 1;
 
     setSearch(String(nextId));
-    data(String(nextId));
+    fetchPokemon(String(nextId));
   };
 
   return (
@@ -56,8 +60,8 @@ const PokedexCard = ({ title, pokemon, data }: any) => {
         ))}
       </div>
 
-      <button onClick={handlePrevious}>Anterior</button>
-      <button onClick={handleNext}>Próximo</button>
+      <button onClick={handlePrevious}>⬅Anterior</button>
+      <button onClick={handleNext}>Próximo➡</button>
     </div>
   );
 };

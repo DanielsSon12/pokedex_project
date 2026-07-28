@@ -13,7 +13,7 @@ const withDataFetch = (title: string, WrapperComponent: any) => {
       try {
         setLoading(true);
         const response = await fetch(
-          `${API_URL_POKEDEX}/${search.toLocaleLowerCase}`,
+          `${API_URL_POKEDEX}/${search.toLowerCase()}`,
         );
 
         if (!response.ok) {
@@ -24,7 +24,8 @@ const withDataFetch = (title: string, WrapperComponent: any) => {
         setPokemon(data);
         setLoading(false);
       } catch (error) {
-        setError("Um erro foi encontrado");
+        setError("Um erro foi encontrado: ");
+        console.log(error);
         setLoading(false);
       }
     };
@@ -54,7 +55,7 @@ const withDataFetch = (title: string, WrapperComponent: any) => {
     }
 
     //Caso de nenhum data for encontrado
-    if (pokemon.length === 0) {
+    if (!pokemon) {
       return (
         <div>
           <h2>{title}</h2>
@@ -64,7 +65,11 @@ const withDataFetch = (title: string, WrapperComponent: any) => {
     }
 
     return (
-      <WrapperComponent title="Pokedex" pokemon={pokemon} data={fetchData} />
+      <WrapperComponent
+        title="Pokedex"
+        pokemon={pokemon}
+        fetchPokemon={fetchData}
+      />
     );
   };
 };
