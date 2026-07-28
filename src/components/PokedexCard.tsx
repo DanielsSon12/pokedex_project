@@ -20,7 +20,12 @@ const PokedexCard = ({ title, pokemon, data }: any) => {
     data(String(previousId));
   };
 
-  const handleNext = () => {};
+  const handleNext = () => {
+    const nextId = pokemon.id + 1;
+
+    setSearch(String(nextId));
+    data(String(nextId));
+  };
 
   return (
     <div>
