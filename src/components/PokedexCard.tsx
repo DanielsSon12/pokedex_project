@@ -5,7 +5,14 @@ import fundoTela from "../assets/images/fundoTelaPokedex.jpg";
 import withDataFetch from "./DataFetch";
 import TypeColors from "./TypeColors";
 
-const PokedexCard = ({ title, loading, erro, pokemon, fetchPokemon }: any) => {
+const PokedexCard = ({
+  title,
+  loading,
+  erro,
+  pokemon,
+  fetchPokemon,
+  clearError,
+}: any) => {
   const [search, setSearch] = useState("");
 
   const handleSearch = () => {
@@ -27,7 +34,7 @@ const PokedexCard = ({ title, loading, erro, pokemon, fetchPokemon }: any) => {
   const errorScreen = () => {
     if (erro) {
       console.log(erro);
-      return <CircleHelp className="size-20 text-blue-400" />;
+      return <CircleHelp className="size-20 text-blue-600/50" />;
     }
   };
 
@@ -38,14 +45,12 @@ const PokedexCard = ({ title, loading, erro, pokemon, fetchPokemon }: any) => {
 
     const previousId = pokemon.id - 1;
 
-    setSearch(String(previousId));
     fetchPokemon(String(previousId));
   };
 
   const handleNext = () => {
     const nextId = pokemon.id + 1;
 
-    setSearch(String(nextId));
     fetchPokemon(String(nextId));
   };
 
@@ -60,7 +65,10 @@ const PokedexCard = ({ title, loading, erro, pokemon, fetchPokemon }: any) => {
           type="text"
           placeholder="ex: Número ID / Nome"
           value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={(e) => {
+            setSearch(e.target.value);
+            clearError();
+          }}
           //Função para fazer o Enter funcionar quando estamos pesquisando o pokemon
           onKeyDown={(e) => {
             if (e.key === "Enter") {
@@ -72,21 +80,28 @@ const PokedexCard = ({ title, loading, erro, pokemon, fetchPokemon }: any) => {
         />
         <button
           onClick={handleSearch}
-          className="bg-gray-900 rounded-full border border-gray-800 text-white inset-shadow-sm inset-shadow-gray-600 w-10 p-2 cursor-pointer mx-2 hover:scale-90"
+          className="bg-gray-900 rounded-full border border-gray-800 text-white inset-shadow-sm inset-shadow-gray-600 w-10 p-2 cursor-pointer mx-2 hover:scale-90 hover:inset-shadow-none"
         >
           🔎
         </button>
 
-        <div className="bg-white p-7 mx-auto m-7 w-100 rounded-bl-4xl border-2 shadow-[inset_0_0_25px_rgba(0,0,0,0.8)]">
-          <h2 className="text-xl">
-            <b className="text-white tracking-wider [text-shadow:3px_1px_0_black,-2px_1px_0_black,3px_2px_0_black,0px_2px_0_black,2px_-1px_0_black,1px_-2px_0_black,-1px_-2px_0_black]">
-              #{pokemon.id}
-            </b>{" "}
-            -{" "}
-            <span className="text-white tracking-wider [text-shadow:3px_1px_0_black,-2px_1px_0_black,3px_2px_0_black,0px_2px_0_black,2px_-1px_0_black,1px_-2px_0_black,-1px_-2px_0_black] font-bold">
-              {pokemon.name.toUpperCase()}
-            </span>
-          </h2>
+        <div className="bg-white p-7 mx-auto m-7 w-100 h-107 rounded-bl-4xl border-2 shadow-[inset_0_0_25px_rgba(0,0,0,0.8)]">
+          {loading ? (
+            <h2>-----------</h2>
+          ) : erro ? (
+            <h2>----------------</h2>
+          ) : (
+            <h2 className="text-xl">
+              <b className="text-white tracking-wider [text-shadow:3px_1px_0_black,-2px_1px_0_black,3px_2px_0_black,0px_2px_0_black,2px_-1px_0_black,1px_-2px_0_black,-1px_-2px_0_black]">
+                #{pokemon.id}
+              </b>{" "}
+              -{" "}
+              <span className="text-white tracking-wider [text-shadow:3px_1px_0_black,-2px_1px_0_black,3px_2px_0_black,0px_2px_0_black,2px_-1px_0_black,1px_-2px_0_black,-1px_-2px_0_black] font-bold">
+                {pokemon.name.toUpperCase()}
+              </span>
+            </h2>
+          )}
+
           <div
             className="bg-cover bg-center bg-no-repeat h-70 flex items-center justify-center m-3 rounded-xl border-3"
             style={{ backgroundImage: `url(${fundoTela})` }}
@@ -104,27 +119,33 @@ const PokedexCard = ({ title, loading, erro, pokemon, fetchPokemon }: any) => {
             )}
           </div>
 
-          <div className="flex justify-center gap-2">
-            {pokemon.types.map((tipo: any) => (
-              <h2
-                key={tipo.slot}
-                className={`p-1.5 px-8 rounded-xl border-2 border-gray-900 inset-shadow-sm inset-shadow-gray-800/40 font-semibold text-white ${TypeColors[tipo.type.name]} [text-shadow:3px_1px_0_black,-2px_1px_0_black,3px_2px_0_black,0px_2px_0_black,2px_-1px_0_black,1px_-2px_0_black,-1px_-2px_0_black]`}
-              >
-                {tipo.type.name.toUpperCase()}
-              </h2>
-            ))}
-          </div>
+          {loading ? (
+            <h2>-----------</h2>
+          ) : erro ? (
+            <h2>-----------</h2>
+          ) : (
+            <div className="flex justify-center gap-2">
+              {pokemon.types.map((tipo: any) => (
+                <h2
+                  key={tipo.slot}
+                  className={`p-1.5 px-8 rounded-xl border-2 border-gray-900 inset-shadow-sm inset-shadow-gray-800/40 font-semibold text-white ${TypeColors[tipo.type.name]} [text-shadow:3px_1px_0_black,-2px_1px_0_black,3px_2px_0_black,0px_2px_0_black,2px_-1px_0_black,1px_-2px_0_black,-1px_-2px_0_black]`}
+                >
+                  {tipo.type.name.toUpperCase()}
+                </h2>
+              ))}
+            </div>
+          )}
         </div>
 
         <button
           onClick={handlePrevious}
-          className="bg-gray-900 border border-gray-800 text-white inset-shadow-sm inset-shadow-gray-500 rounded-xl p-2 px-10 mr-5 font-semibold cursor-pointer hover:scale-95"
+          className="bg-gray-900 border border-gray-800 text-white inset-shadow-sm inset-shadow-gray-500 rounded-xl p-2 px-10 mr-5 font-semibold cursor-pointer hover:scale-95 hover:inset-shadow-none"
         >
           Anterior
         </button>
         <button
           onClick={handleNext}
-          className="bg-gray-900  border border-gray-800 text-white inset-shadow-sm inset-shadow-gray-500 rounded-xl p-2 px-10 ml-5 font-semibold cursor-pointer hover:scale-95"
+          className="bg-gray-900  border border-gray-800 text-white inset-shadow-sm inset-shadow-gray-500 rounded-xl p-2 px-10 ml-5 font-semibold cursor-pointer hover:scale-95 hover:inset-shadow-none"
         >
           Próximo
         </button>
