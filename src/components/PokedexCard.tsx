@@ -1,16 +1,34 @@
+import { CircleHelp } from "lucide-react";
 import { useState } from "react";
 
 import fundoTela from "../assets/images/fundoTelaPokedex.jpg";
 import withDataFetch from "./DataFetch";
 import TypeColors from "./TypeColors";
 
-const PokedexCard = ({ title, pokemon, fetchPokemon }: any) => {
+const PokedexCard = ({ title, loading, erro, pokemon, fetchPokemon }: any) => {
   const [search, setSearch] = useState("");
 
   const handleSearch = () => {
     if (!search) return;
 
     fetchPokemon(search);
+  };
+
+  const loadingScreen = () => {
+    if (loading) {
+      return (
+        <div className="flex justify-center m-7">
+          <div className="w-8 h-8 border-4 border-gray-300 border-t-blue-400 rounded-full animate-spin"></div>
+        </div>
+      );
+    }
+  };
+
+  const errorScreen = () => {
+    if (erro) {
+      console.log(erro);
+      return <CircleHelp className="size-20 text-blue-400" />;
+    }
   };
 
   const handlePrevious = () => {
@@ -70,14 +88,20 @@ const PokedexCard = ({ title, pokemon, fetchPokemon }: any) => {
             </span>
           </h2>
           <div
-            className="bg-cover bg-center bg-no-repeat h-auto flex items-center justify-center m-3 rounded-xl border-3"
+            className="bg-cover bg-center bg-no-repeat h-70 flex items-center justify-center m-3 rounded-xl border-3"
             style={{ backgroundImage: `url(${fundoTela})` }}
           >
-            <img
-              src={pokemon.sprites.front_default}
-              alt={pokemon.name}
-              className="mx-auto m-7 size-50"
-            />
+            {loading ? (
+              loadingScreen()
+            ) : erro ? (
+              errorScreen()
+            ) : (
+              <img
+                src={pokemon.sprites.front_default}
+                alt={pokemon.name}
+                className="mx-auto m-7 size-50"
+              />
+            )}
           </div>
 
           <div className="flex justify-center gap-2">

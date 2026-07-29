@@ -24,7 +24,9 @@ const withDataFetch = (title: string, WrapperComponent: any) => {
         setPokemon(data);
         setLoading(false);
       } catch (error) {
-        setError("Um erro foi encontrado: ");
+        setError(
+          "O Pokemon não foi encontrado ou alguma informação esta incorreta!",
+        );
         console.log(error);
         setLoading(false);
       }
@@ -35,24 +37,24 @@ const withDataFetch = (title: string, WrapperComponent: any) => {
     }, []);
 
     //Tela de Loading
-    if (isLoading) {
-      return (
-        <div>
-          <h2>{title}</h2>
-          <p>🔎 Procurando os dados na pokedex...</p>
-        </div>
-      );
-    }
+    // if (isLoading) {
+    //   return (
+    //     <div>
+    //       <h2>{title}</h2>
+    //       <p>🔎 Procurando os dados na pokedex...</p>
+    //     </div>
+    //   );
+    // }
 
-    //Tela de Erro
-    if (error) {
-      return (
-        <div>
-          <h2>{title}</h2>
-          <p>⚠️-- {error} --⚠️</p>
-        </div>
-      );
-    }
+    // //Tela de Erro
+    // if (error) {
+    //   return (
+    //     <div>
+    //       <h2>{title}</h2>
+    //       <p>⚠️-- {error} --⚠️</p>
+    //     </div>
+    //   );
+    // }
 
     //Caso de nenhum data for encontrado
     if (!pokemon) {
@@ -67,6 +69,8 @@ const withDataFetch = (title: string, WrapperComponent: any) => {
     return (
       <WrapperComponent
         title="Pokedex"
+        loading={isLoading}
+        erro={error}
         pokemon={pokemon}
         fetchPokemon={fetchData}
       />
