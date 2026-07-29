@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import fundoTela from "../assets/images/fundoTelaPokedex.jpg";
 import withDataFetch from "./DataFetch";
+import TypeColors from "./TypeColors";
 
 const PokedexCard = ({ title, pokemon, fetchPokemon }: any) => {
   const [search, setSearch] = useState("");
@@ -49,18 +50,21 @@ const PokedexCard = ({ title, pokemon, fetchPokemon }: any) => {
             }
           }}
 
-          className="bg-gray-300 rounded-2xl p-2 w-100"
+          className="bg-gray-300 rounded-2xl ml-14 p-2 w-100 border placeholder:italic placeholder:text-sm"
         />
         <button
           onClick={handleSearch}
-          className="bg-gray-900 rounded-full text-white w-10 p-2 cursor-pointer mx-1 hover:scale-90 hover:shadow-[0_0_5px_rgba(0,0,0,1)]"
+          className="bg-gray-900 rounded-full border border-gray-800 text-white inset-shadow-sm inset-shadow-gray-600 w-10 p-2 cursor-pointer mx-2 hover:scale-90"
         >
           🔎
         </button>
 
-        <div className="bg-white p-7 mx-auto m-7 w-100 rounded-bl-4xl border-3">
+        <div className="bg-white p-7 mx-auto m-7 w-100 rounded-bl-4xl border-2 shadow-[inset_0_0_25px_rgba(0,0,0,0.8)]">
           <h2 className="text-xl">
-            <b>#{pokemon.id}</b> -{" "}
+            <b className="text-white tracking-wider [text-shadow:3px_1px_0_black,-2px_1px_0_black,3px_2px_0_black,0px_2px_0_black,2px_-1px_0_black,1px_-2px_0_black,-1px_-2px_0_black]">
+              #{pokemon.id}
+            </b>{" "}
+            -{" "}
             <span className="text-white tracking-wider [text-shadow:3px_1px_0_black,-2px_1px_0_black,3px_2px_0_black,0px_2px_0_black,2px_-1px_0_black,1px_-2px_0_black,-1px_-2px_0_black] font-bold">
               {pokemon.name.toUpperCase()}
             </span>
@@ -80,7 +84,7 @@ const PokedexCard = ({ title, pokemon, fetchPokemon }: any) => {
             {pokemon.types.map((tipo: any) => (
               <h2
                 key={tipo.slot}
-                className="bg-gray-400 p-1.5 px-8 rounded-xl border-2 border-gray-700"
+                className={`p-1.5 px-8 rounded-xl border-2 border-gray-900 inset-shadow-sm inset-shadow-gray-800/40 font-semibold text-white ${TypeColors[tipo.type.name]} [text-shadow:3px_1px_0_black,-2px_1px_0_black,3px_2px_0_black,0px_2px_0_black,2px_-1px_0_black,1px_-2px_0_black,-1px_-2px_0_black]`}
               >
                 {tipo.type.name.toUpperCase()}
               </h2>
@@ -90,13 +94,13 @@ const PokedexCard = ({ title, pokemon, fetchPokemon }: any) => {
 
         <button
           onClick={handlePrevious}
-          className="bg-gray-900 border-2 border-gray-700 text-white rounded-xl p-2 px-10 mr-5 cursor-pointer hover:scale-95"
+          className="bg-gray-900 border border-gray-800 text-white inset-shadow-sm inset-shadow-gray-500 rounded-xl p-2 px-10 mr-5 font-semibold cursor-pointer hover:scale-95"
         >
           Anterior
         </button>
         <button
           onClick={handleNext}
-          className="bg-gray-900 border-2 border-gray-700 text-white rounded-xl p-2 px-10 ml-5 cursor-pointer hover:scale-95"
+          className="bg-gray-900  border border-gray-800 text-white inset-shadow-sm inset-shadow-gray-500 rounded-xl p-2 px-10 ml-5 font-semibold cursor-pointer hover:scale-95"
         >
           Próximo
         </button>
