@@ -1,4 +1,4 @@
-# 🔴 Pokédex
+# Pokédex
 
 Uma Pokédex desenvolvida com React, TypeScript e Tailwind CSS utilizando a PokéAPI.
 
@@ -32,6 +32,10 @@ Este projeto utilizou a API **[PokéAPI](https://pokeapi.co/)** para obter todas
 
 ## 🚀 Como executar
 
+### **Pré-requisito:** instale o [Node.js](https://nodejs.org/pt-br), recomenda-se a versão LTS.
+
+---
+
 ### Clone o projeto
 
 ```bash
@@ -55,5 +59,13 @@ npm install
 ```bash
 npm run dev
 ```
+
+---
+
+<h1 align="center"> 🖥️ Demonstração da Pokédex </h1>
+
+<p align="center">
+	<img src="./src/assets/images/pokedexView.png" alt="pokedexView" width="600" />
+</p>
 
 ---
