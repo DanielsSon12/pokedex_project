@@ -133,11 +133,15 @@ const PokedexCard = ({
         <button
           onClick={handleSearch}
           className="
+            max-sm:active:scale-90 
+            max-sm:active:inset-shadow-none
             max-sm:text-xs
             max-sm:w-7
             max-sm:h-7
             max-sm:p-1
             max-sm:mx-1
+            max-md:active:scale-90 
+            max-md:active:inset-shadow-none
             max-md:text-xs
             max-md:w-8
             max-md:h-8
@@ -196,6 +200,8 @@ const PokedexCard = ({
               <b
                 className="
                   max-sm:[text-shadow:1px_1px_0_black,-1px_1px_0_black,1px_-1px_0_black,-1px_-1px_0_black]
+                  max-md:[text-shadow:1px_0px_0_black,-1px_0px_0_black,0px_1px_0_black,0px_-1px_0_black,1px_1px_0_black,-1px_1px_0_black,1px_-1px_0_black,-1px_-1px_0_black]
+                  max-lg:[text-shadow:2px_1px_0_black,-2px_1px_0_black,2px_2px_0_black,0px_2px_0_black,2px_-1px_0_black,1px_-1px_0_black,-1px_-1px_0_black]
                   text-white 
                   tracking-wider 
                   [text-shadow:3px_1px_0_black,-2px_1px_0_black,3px_2px_0_black,0px_2px_0_black,2px_-1px_0_black,1px_-2px_0_black,-1px_-2px_0_black]"
@@ -206,6 +212,8 @@ const PokedexCard = ({
               <span
                 className="
                   max-sm:[text-shadow:1px_1px_0_black,-1px_1px_0_black,1px_-1px_0_black,-1px_-1px_0_black]
+                  max-md:[text-shadow:1px_0px_0_black,-1px_0px_0_black,0px_1px_0_black,0px_-1px_0_black,1px_1px_0_black,-1px_1px_0_black,1px_-1px_0_black,-1px_-1px_0_black]
+                  max-lg:[text-shadow:2px_1px_0_black,-2px_1px_0_black,2px_2px_0_black,0px_2px_0_black,2px_-1px_0_black,1px_-1px_0_black,-1px_-1px_0_black]
                   text-white 
                   tracking-wider 
                   font-bold
@@ -261,6 +269,8 @@ const PokedexCard = ({
                   key={tipo.slot}
                   className={`
                     max-sm:[text-shadow:1px_1px_0_black,-1px_1px_0_black,1px_-1px_0_black,-1px_-1px_0_black]
+                    max-md:[text-shadow:1px_0px_0_black,-1px_0px_0_black,0px_1px_0_black,0px_-1px_0_black,1px_1px_0_black,-1px_1px_0_black,1px_-1px_0_black,-1px_-1px_0_black]
+                    max-lg:[text-shadow:2px_1px_0_black,-2px_1px_0_black,2px_2px_0_black,0px_2px_0_black,2px_-1px_0_black,1px_-1px_0_black,-1px_-1px_0_black]
                     max-sm:border
                     max-sm:text-xs
                     max-sm:px-2
@@ -293,9 +303,13 @@ const PokedexCard = ({
         <button
           onClick={handlePrevious}
           className="
+            max-sm:active:scale-90 
+            max-sm:active:inset-shadow-none
             max-sm:text-xs
             max-sm:px-6
             max-sm:mr-0
+            max-md:active:scale-90 
+            max-md:active:inset-shadow-none
             max-md:px-5 
             max-md:mr-2
             max-md:text-sm
@@ -321,9 +335,13 @@ const PokedexCard = ({
         <button
           onClick={handleNext}
           className="
+            max-sm:active:scale-90 
+            max-sm:active:inset-shadow-none
             max-sm:text-xs
             max-sm:px-6
             max-sm:mr-0
+            max-md:active:scale-90 
+            max-md:active:inset-shadow-none
             max-md:px-5 
             max-md:mr-2
             max-md:text-sm
