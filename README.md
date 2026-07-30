@@ -13,6 +13,7 @@ Este projeto utilizou a API **[PokéAPI](https://pokeapi.co/)** para obter todas
 - 🎨 Tipos com cores personalizadas
 - ⏳ Tela de carregamento
 - ⚠️ Tratamento de erros
+- 📱 Tela Responsiva
 
 <!-- - 📱 Interface responsiva -->
 
