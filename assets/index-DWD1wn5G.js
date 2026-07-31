@@ -46,11 +46,15 @@ Error generating stack: `+e.message+`
             border \r
             placeholder:italic \r
             placeholder:text-sm`}),(0,C.jsx)(`button`,{onClick:c,className:`\r
+            max-sm:active:scale-90 \r
+            max-sm:active:inset-shadow-none\r
             max-sm:text-xs\r
             max-sm:w-7\r
             max-sm:h-7\r
             max-sm:p-1\r
             max-sm:mx-1\r
+            max-md:active:scale-90 \r
+            max-md:active:inset-shadow-none\r
             max-md:text-xs\r
             max-md:w-8\r
             max-md:h-8\r
@@ -67,7 +71,11 @@ Error generating stack: `+e.message+`
             cursor-pointer \r
             mx-2 \r
             hover:scale-90 \r
-            hover:inset-shadow-none`,children:`🔎`}),(0,C.jsxs)(`div`,{className:`\r
+            hover:inset-shadow-none\r
+            transition-all\r
+            duration-100\r
+            active:scale-90\r
+            active:shadow-none`,children:`🔎`}),(0,C.jsxs)(`div`,{className:`\r
             max-sm:w-60\r
             max-sm:h-62\r
             max-sm:px-2\r
@@ -92,10 +100,14 @@ Error generating stack: `+e.message+`
                 max-lg:text-md \r
                 text-xl`,children:[(0,C.jsxs)(`b`,{className:`\r
                   max-sm:[text-shadow:1px_1px_0_black,-1px_1px_0_black,1px_-1px_0_black,-1px_-1px_0_black]\r
+                  max-md:[text-shadow:1px_1px_0_black,-1px_1px_0_black,1px_-1px_0_black,-1px_-1px_0_black]\r
+                  max-lg:[text-shadow:1px_1px_0_black,-1px_1px_0_black,1px_-1px_0_black,-1px_-1px_0_black]\r
                   text-white \r
                   tracking-wider \r
                   [text-shadow:3px_1px_0_black,-2px_1px_0_black,3px_2px_0_black,0px_2px_0_black,2px_-1px_0_black,1px_-2px_0_black,-1px_-2px_0_black]`,children:[`#`,r.id]}),` `,`-`,` `,(0,C.jsx)(`span`,{className:`\r
                   max-sm:[text-shadow:1px_1px_0_black,-1px_1px_0_black,1px_-1px_0_black,-1px_-1px_0_black]\r
+                  max-md:[text-shadow:1px_1px_0_black,-1px_1px_0_black,1px_-1px_0_black,-1px_-1px_0_black]\r
+                  max-lg:[text-shadow:1px_1px_0_black,-1px_1px_0_black,1px_-1px_0_black,-1px_-1px_0_black]\r
                   text-white \r
                   tracking-wider \r
                   font-bold\r
@@ -125,6 +137,8 @@ Error generating stack: `+e.message+`
               rounded-full \r
               animate-spin`})})})():n?(()=>{if(n)return console.log(n),(0,C.jsx)(y,{className:`size-20 text-blue-600/50`})})():(0,C.jsx)(`img`,{src:r.sprites.front_default,alt:r.name,className:`max-sm:size-35 max-md:size-40 mx-auto justify-center m-7 size-50`})}),t||n?(0,C.jsx)(`h2`,{children:`-----------`}):(0,C.jsx)(`div`,{className:`flex flex-wrap justify-center gap-2`,children:r.types.map(e=>(0,C.jsx)(`h2`,{className:`
                     max-sm:[text-shadow:1px_1px_0_black,-1px_1px_0_black,1px_-1px_0_black,-1px_-1px_0_black]
+                    max-md:[text-shadow:1px_1px_0_black,-1px_1px_0_black,1px_-1px_0_black,-1px_-1px_0_black]
+                    max-lg:[text-shadow:1px_1px_0_black,-1px_1px_0_black,1px_-1px_0_black,-1px_-1px_0_black]
                     max-sm:border
                     max-sm:text-xs
                     max-sm:px-2
@@ -146,9 +160,13 @@ Error generating stack: `+e.message+`
                     font-semibold 
                     ${ne[e.type.name]} 
                     [text-shadow:3px_1px_0_black,-2px_1px_0_black,3px_2px_0_black,0px_2px_0_black,2px_-1px_0_black,1px_-2px_0_black,-1px_-2px_0_black]`,children:e.type.name.toUpperCase()},e.slot))})]}),(0,C.jsx)(`button`,{onClick:()=>{if(r.id<=1)return;let e=r.id-1;i(String(e))},className:`\r
+            max-sm:active:scale-90 \r
+            max-sm:active:inset-shadow-none\r
             max-sm:text-xs\r
             max-sm:px-6\r
             max-sm:mr-0\r
+            max-md:active:scale-90 \r
+            max-md:active:inset-shadow-none\r
             max-md:px-5 \r
             max-md:mr-2\r
             max-md:text-sm\r
@@ -167,10 +185,18 @@ Error generating stack: `+e.message+`
             font-semibold \r
             cursor-pointer \r
             hover:scale-95 \r
-            hover:inset-shadow-none`,children:`Anterior`}),(0,C.jsx)(`button`,{onClick:()=>{let e=r.id+1;i(String(e))},className:`\r
+            hover:inset-shadow-none\r
+            transition-all\r
+            duration-100\r
+            active:scale-95\r
+            active:shadow-none`,children:`Anterior`}),(0,C.jsx)(`button`,{onClick:()=>{let e=r.id+1;i(String(e))},className:`\r
+            max-sm:active:scale-90 \r
+            max-sm:active:inset-shadow-none\r
             max-sm:text-xs\r
             max-sm:px-6\r
             max-sm:mr-0\r
+            max-md:active:scale-90 \r
+            max-md:active:inset-shadow-none\r
             max-md:px-5 \r
             max-md:mr-2\r
             max-md:text-sm\r
@@ -189,4 +215,8 @@ Error generating stack: `+e.message+`
             font-semibold \r
             cursor-pointer \r
             hover:scale-95 \r
-            hover:inset-shadow-none`,children:`Próximo`})]})})});function w(){return(0,C.jsx)(re,{})}(0,b.createRoot)(document.getElementById(`root`)).render((0,C.jsx)(h.StrictMode,{children:(0,C.jsx)(w,{})}));
+            hover:inset-shadow-none\r
+            transition-all\r
+            duration-100\r
+            active:scale-95\r
+            active:shadow-none`,children:`Próximo`})]})})});function w(){return(0,C.jsx)(re,{})}(0,b.createRoot)(document.getElementById(`root`)).render((0,C.jsx)(h.StrictMode,{children:(0,C.jsx)(w,{})}));
