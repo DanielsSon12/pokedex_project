@@ -158,7 +158,11 @@ const PokedexCard = ({
             cursor-pointer 
             mx-2 
             hover:scale-90 
-            hover:inset-shadow-none"
+            hover:inset-shadow-none
+            transition-all
+            duration-100
+            active:scale-90
+            active:shadow-none"
         >
           🔎
         </button>
@@ -200,8 +204,8 @@ const PokedexCard = ({
               <b
                 className="
                   max-sm:[text-shadow:1px_1px_0_black,-1px_1px_0_black,1px_-1px_0_black,-1px_-1px_0_black]
-                  max-md:[text-shadow:1px_0px_0_black,-1px_0px_0_black,0px_1px_0_black,0px_-1px_0_black,1px_1px_0_black,-1px_1px_0_black,1px_-1px_0_black,-1px_-1px_0_black]
-                  max-lg:[text-shadow:2px_1px_0_black,-2px_1px_0_black,2px_2px_0_black,0px_2px_0_black,2px_-1px_0_black,1px_-1px_0_black,-1px_-1px_0_black]
+                  max-md:[text-shadow:1px_1px_0_black,-1px_1px_0_black,1px_-1px_0_black,-1px_-1px_0_black]
+                  max-lg:[text-shadow:1px_1px_0_black,-1px_1px_0_black,1px_-1px_0_black,-1px_-1px_0_black]
                   text-white 
                   tracking-wider 
                   [text-shadow:3px_1px_0_black,-2px_1px_0_black,3px_2px_0_black,0px_2px_0_black,2px_-1px_0_black,1px_-2px_0_black,-1px_-2px_0_black]"
@@ -212,8 +216,8 @@ const PokedexCard = ({
               <span
                 className="
                   max-sm:[text-shadow:1px_1px_0_black,-1px_1px_0_black,1px_-1px_0_black,-1px_-1px_0_black]
-                  max-md:[text-shadow:1px_0px_0_black,-1px_0px_0_black,0px_1px_0_black,0px_-1px_0_black,1px_1px_0_black,-1px_1px_0_black,1px_-1px_0_black,-1px_-1px_0_black]
-                  max-lg:[text-shadow:2px_1px_0_black,-2px_1px_0_black,2px_2px_0_black,0px_2px_0_black,2px_-1px_0_black,1px_-1px_0_black,-1px_-1px_0_black]
+                  max-md:[text-shadow:1px_1px_0_black,-1px_1px_0_black,1px_-1px_0_black,-1px_-1px_0_black]
+                  max-lg:[text-shadow:1px_1px_0_black,-1px_1px_0_black,1px_-1px_0_black,-1px_-1px_0_black]
                   text-white 
                   tracking-wider 
                   font-bold
@@ -269,8 +273,8 @@ const PokedexCard = ({
                   key={tipo.slot}
                   className={`
                     max-sm:[text-shadow:1px_1px_0_black,-1px_1px_0_black,1px_-1px_0_black,-1px_-1px_0_black]
-                    max-md:[text-shadow:1px_0px_0_black,-1px_0px_0_black,0px_1px_0_black,0px_-1px_0_black,1px_1px_0_black,-1px_1px_0_black,1px_-1px_0_black,-1px_-1px_0_black]
-                    max-lg:[text-shadow:2px_1px_0_black,-2px_1px_0_black,2px_2px_0_black,0px_2px_0_black,2px_-1px_0_black,1px_-1px_0_black,-1px_-1px_0_black]
+                    max-md:[text-shadow:1px_1px_0_black,-1px_1px_0_black,1px_-1px_0_black,-1px_-1px_0_black]
+                    max-lg:[text-shadow:1px_1px_0_black,-1px_1px_0_black,1px_-1px_0_black,-1px_-1px_0_black]
                     max-sm:border
                     max-sm:text-xs
                     max-sm:px-2
@@ -328,7 +332,11 @@ const PokedexCard = ({
             font-semibold 
             cursor-pointer 
             hover:scale-95 
-            hover:inset-shadow-none"
+            hover:inset-shadow-none
+            transition-all
+            duration-100
+            active:scale-95
+            active:shadow-none"
         >
           Anterior
         </button>
@@ -360,7 +368,11 @@ const PokedexCard = ({
             font-semibold 
             cursor-pointer 
             hover:scale-95 
-            hover:inset-shadow-none"
+            hover:inset-shadow-none
+            transition-all
+            duration-100
+            active:scale-95
+            active:shadow-none"
         >
           Próximo
         </button>
