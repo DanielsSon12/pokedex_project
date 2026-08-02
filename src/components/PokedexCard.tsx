@@ -1,6 +1,7 @@
 import { CircleHelp } from "lucide-react";
 import { useState } from "react";
 
+import backgroundSite from "../assets/images/backgroundSite.jpeg";
 import fundoTela from "../assets/images/fundoTelaPokedex.jpg";
 import withDataFetch from "./DataFetch";
 import TypeColors from "./TypeColors";
@@ -64,7 +65,19 @@ const PokedexCard = ({
   };
 
   return (
-    <main className="min-h-screen bg-blue-500 flex items-center justify-center text-center">
+    <main
+      className="
+        min-h-screen 
+        bg-blue-500 
+        flex 
+        items-center 
+        justify-center 
+        text-center
+        bg-cover
+        bg-center
+        bg-no-repeat"
+      style={{ backgroundImage: `url(${backgroundSite})` }}
+    >
       <div
         className="
           max-sm:w-80
